@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Panier</title>
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+        <h1>IT Academy</h1>
+        <h2>Pannier</h2>
+        <a href="/redirect" >
+                <input type="submit" value="Finaliser l'inscription" class="Lien">
+        </a>
+        <a href="/" >
+            <input type="submit" value="Retour au catalogue" class="Lien">
+        </a>
+        <table class ='t1'>
+            <tr><th>Id</th><th>Nom</th><th>Prix</th><th>Début</th><th>Fin</th><th></th></tr>
+            <% for (let i = 0 ; i < lists.length ; i++) { %>
+                <tr>
+                    <td ><%= lists[i][0] %></td>
+                    <td ><%= lists[i][1] %></td>
+                    <td ><%= lists[i][2] %></td>
+                    <td ><%= lists[i][3] %></td>
+                    <td ><%= lists[i][4] %></td>
+                    <td><a href="/basket/<%= i %>"><input type="submit" value="Supprimer" class="Lien2"></a></td>
+                </tr>
+            <% } %>
+        </table>
+    </body>
+</html>

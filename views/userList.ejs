@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>IT Acad</title>
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+        <h1>IT Academy</h1>
+        <h2>Formations disponnibles</h2>
+        <a href="/basket" >
+            <input type="submit" value="Voir le panier" class="Lien">
+        </a>
+        <a href="/connect" >
+            <input type="submit" value="Se connecter" class="Lien">
+        </a><br />
+        <table class ='t1'>
+            <tr><th>Id</th><th>Nom</th><th>Prix</th><th>Début</th><th>Fin</th><th></th></tr>
+                <% for (let i = 0 ; i < catalogues.length ; i++) { %>
+                    <tr>
+                        <td ><%= catalogues[i].idcatalogue %></td>
+                        <td ><%= catalogues[i].Nom %></td>
+                        <td ><%= catalogues[i].Prix %></td>
+                        <td ><%= catalogues[i].Début %></td>
+                        <td ><%= catalogues[i].Fin %></td>
+                        <td><a href="/update/<%= catalogues[i].idcatalogue %>"><input type="submit" value="S'inscrire" class="Lien2"></a></td>
+                    </tr>
+                <% } %>
+        </table>
+        <% if(trick==true) { %> <p> Enregistrement validé! </p> <% } %> 
+    </body>
+</html>
